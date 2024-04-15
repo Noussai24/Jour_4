@@ -13,5 +13,4 @@ img = soup.find('img')
 #print(img)
 
 
-git init
 
