@@ -9,20 +9,9 @@ response = requests.get(url)
 content = response.content
 
 # Utiliser BeautifulSoup pour analyser le contenu HTML de la page
-soup = BeautifulSoup(content, 'html.parser')
+#soup = BeautifulSoup(content, 'html.parser')
 
-# Trouver l'élément <div> avec la classe "mw-mmv-image"
-div_class = soup.find("div", {"class":"mw-mmv-image-wrapper"})
-if div_class:
-    image = div_class.find('img')
-    if image:
-        img_source = image.get('src')
-    else:
-        print("bla")
-else:
-    print("blabla")
+soup = BeautifulSoup (content,'html.parser')
+img = soup.find('img')
+print(img)
 
-# Afficher l'élément trouvé
-print(div_class)
-
-git add .
